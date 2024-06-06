@@ -44,5 +44,11 @@ public class CalculatorTests
     {
         Assert.Equal(2, Evaluator.Eval("/", 10, 5));
     }
-
+	[Fact]
+	public void TestSequentialOperations()
+	{
+		float result1 = Evaluator.Eval("+", 4, 2);
+		float result2 = Evaluator.Eval("*", result1, 2);
+		Assert.Equal(12, result2);
+	}
 }
